@@ -14,7 +14,9 @@ myCodeImmersivesObj.term = 1
 
 
 // Now add 1 to the value of your object's `term` property and put that new value back in your object's `term`.
-myCodeImmersivesObj.term = myCodeImmersivesObj.term + 1
+myCodeImmersivesObj.term = myCodeImmersivesObj.term + 1 
+// myCodeImmersivesObj.term +=
+// myCodeImmersivesObj.term ++
 
 
 // Now add a new property called `currentScore` and set it to 3.
@@ -25,12 +27,14 @@ myCodeImmersivesObj.cumulativeScore = 50
 
 // Now add your `currentScore` and your `cumulativeScore` and put it back in `cumulativeScore`.
 myCodeImmersivesObj.cumulativeScore = myCodeImmersivesObj.currentScore + myCodeImmersivesObj.cumulativeScore
+// myCodeImmersivesObj.cumulativeScore += myCodeImmersivesObj.currentScore
 
 // Now add a property called `I am exactly this cool` (you'll need bracket notation!) and set it to `soooooo cool`.
 myCodeImmersivesObj['I am exactly this cool'] = `soooooo cool`
+console.log(myCodeImmersivesObj)
 
 // Now make a new EMPTY object that represents yourself.
-let yourself = {}
+const yourself = {}
 
 
 // Add a `firstName` property and set it to a string.
@@ -54,7 +58,7 @@ yourself.address = []
 
 // Now push three strings into that array.
 yourself['address'].push('Dinosaur Drive', 'Brooklyn', 'NY')
-
+console.log(yourself)
 
 // Now make a new object, but this time we'll pre-populate it, 
 //not set it in any lines below it. 
@@ -66,6 +70,7 @@ const invisible = {
   boolean: true,
   number: 9,
   array: [1,2,3,4,5],
+  ['bracket notation']: true,
   
 };
 console.log(invisible)
@@ -77,14 +82,26 @@ console.log(invisible)
 // and changes the corresponding value in the object you just made to be the string 'overwritten DYNAMICALLY'.
 // Now call it with the name of one of the keys in your object and see if it works!
 
-const keyName = function(string){
-
-    let thisOne = Object.values(string)
-    thisOne = 'overwritten DYNAMICALLY'
-    // string = 'overwritten DYNAMICALLY'
-    console.log(thisOne)
-
-
-
+const addValueToObject = function(propertyName){
+    invisible[propertyName] = 'overwritten DYNAMICALLY'
+    invisible.propertyName = 'oveaaa' // this adds a new property. Not changes the value
+    
+    
 }
-keyName(invisible.string)
+addValueToObject('string')
+addValueToObject('array')
+console.log(invisible)
+
+
+// how to change the key name instead of the value.
+const oldValue = invisible.string;// saved the value before deleting it
+oldValue;
+delete invisible.string
+invisible.string = oldValue
+
+
+
+// trex.species = trex.name;
+
+// delete trex.name
+// ///delete can delete a key from an object. thats all 'delete' is for
